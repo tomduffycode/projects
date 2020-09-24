@@ -60,6 +60,15 @@ class ProjectsTest extends TestCase
     }
 
     /** @test */
+    public function authenticated_users_cannot_view_others_projects()
+    {
+        $this->be(User::factory()->create());
+        $project = Project::factory()->create();
+
+        $this->get($project->path())->assertStatus(403);
+    }
+
+    /** @test */
     public function a_project_requires_a_title()
     {
         $this->actingAs(User::factory()->create());
