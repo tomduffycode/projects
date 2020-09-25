@@ -1,6 +1,6 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
+<nav x-data="{ open: false }" class="bg-theme1 border-b border-themeGray">
     <!-- Primary Navigation Menu -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
@@ -12,8 +12,11 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('projects') }}" :active="request()->routeIs('projects')">
+                    <x-jet-nav-link class="text-themeGray" href="{{ route('projects') }}" :active="request()->routeIs('projects')">
                         {{ __('Projects') }}
+                    </x-jet-nav-link>
+                    <x-jet-nav-link class="text-themeGray hover:text-themeAccent" href="{{ route('createProject') }}" :active="request()->routeIs('createProject')">
+                        {{ __('Create Project') }}
                     </x-jet-nav-link>
                 </div>
             </div>
