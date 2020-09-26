@@ -6,7 +6,7 @@
                 <p class="mb-4">{{ $project->description }}</p>
                 <a 
                     class="bg-blue-600 shadow-lg text-white px-4 py-2 hover:bg-blue-700 text-center font-semibold focus:outline-none" 
-                    href="/projects/create">Go Back
+                    href="/projects">Go Back
                 </a>
             </div>
         </div>

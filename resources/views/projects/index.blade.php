@@ -1,12 +1,14 @@
 <x-app-layout>
 
-<div class="flex">
+<div class="flex flex-wrap">
     @forelse ($projects as $project)
-        <div class="bg-white mr-4 p-5 rounded shadow w-1/3">
-            <div>
-                <h3 class="text-lg font-bold"><a href="{{ $project->path() }}">{{ $project->title }}</a></h3>
-                <div class="text-sm">
-                    {{ $project->description }}
+        <div class="w-full md:w-1/2 lg:w-1/4 px-3 pb-6">
+            <div class="bg-white p-5 rounded-lg shadow">
+                <div>
+                    <h3 class="text-lg font-bold mb-4 border-solid border-l-4 border-themeAccent -ml-5 pl-4"><a href="{{ $project->path() }}">{{ $project->title }}</a></h3>
+                    <div class="text-sm text-theme2">
+                        {{ Illuminate\Support\Str::limit($project->description, 100) }}
+                    </div>
                 </div>
             </div>
         </div>
