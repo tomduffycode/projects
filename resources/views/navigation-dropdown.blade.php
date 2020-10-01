@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="bg-theme1 border-b border-themeGray">
+<nav x-data="{ open: false }" class="bg-theme1 border-b border-themeAccent">
     <!-- Primary Navigation Menu -->
     <div class="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -12,7 +12,7 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link class="text-themeGray" href="{{ route('projects') }}" :active="request()->routeIs('projects')">
+                    <x-jet-nav-link class="text-themeGray hover:text-themeAccent" href="{{ route('projects') }}" :active="request()->routeIs('projects')">
                         {{ __('Projects') }}
                     </x-jet-nav-link>
                     <x-jet-nav-link class="text-themeGray hover:text-themeAccent" href="{{ route('createProject') }}" :active="request()->routeIs('createProject')">
@@ -46,7 +46,7 @@
                             </x-jet-dropdown-link>
                         @endif
 
-                        <div class="border-t border-gray-100"></div>
+                        <div class="border-t border-themeAccent"></div>
 
                         <!-- Team Management -->
                         @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
@@ -65,7 +65,7 @@
                                 </x-jet-dropdown-link>
                             @endcan
 
-                            <div class="border-t border-gray-100"></div>
+                            <div class="border-t border-themeAccent"></div>
 
                             <!-- Team Switcher -->
                             <div class="block px-4 py-2 text-xs text-gray-400">
@@ -76,7 +76,7 @@
                                 <x-jet-switchable-team :team="$team" />
                             @endforeach
 
-                            <div class="border-t border-gray-100"></div>
+                            <div class="border-t border-themeAccent"></div>
                         @endif
 
                         <!-- Authentication -->
