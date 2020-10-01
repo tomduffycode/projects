@@ -1,6 +1,6 @@
 <x-app-layout>
 
-<div class="flex flex-wrap">
+<div class="flex flex-wrap mt-4">
     @forelse ($projects as $project)
         <div class="w-full md:w-1/2 lg:w-1/4 px-3 pb-6">
             <div class="card">
