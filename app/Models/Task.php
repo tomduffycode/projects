@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Project extends Model
+class Task extends Model
 {
     use HasFactory;
 
@@ -13,16 +13,11 @@ class Project extends Model
 
     public function path()
     {
-        return "/projects/{$this->id}";
+        return "/tasks/{$this->id}";
     }
 
-    public function owner()
+    public function project()
     {
-        return $this->belongsTo(User::class);
-    }
-
-    public function tasks()
-    {
-        return $this->hasMany(Task::class);
+        return $this->belongsTo(Project::class);
     }
 }
