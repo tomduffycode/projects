@@ -14,14 +14,21 @@ class TaskTest extends TestCase
     use RefreshDatabase;
 
     /** @test */
+    public function it_has_a_path()
+    {
+        $project = Project::factory()->create();
+        $task = Task::factory()->create(['project_id' => $project->id]);
+
+        $this->assertEquals('/tasks/' . $task->id, $task->path());
+    }
+
+    /** @test */
     public function it_belongs_to_a_project()
     {
         $this->withoutExceptionHandling();
 
-        $project = Project::factory()->create();
+        $task = Task::factory()->create();
         
-        $task = Task::factory()->create(['project_id' => $project->id]);
-
-        
+        $this->assertInstanceOf('App\Models\Project', $task->project);
     }
 }
